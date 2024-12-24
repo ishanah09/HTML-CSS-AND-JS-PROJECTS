@@ -16,4 +16,5 @@ function calculate(event) {
   let percentage = Math.round((totalMarks / 500) * 100);
 
   resultEl.innerHTML = `You have got ${totalMarks} marks out of ${marks} and your percentage is ${percentage}%`;
+  event.target.reset();
 }
