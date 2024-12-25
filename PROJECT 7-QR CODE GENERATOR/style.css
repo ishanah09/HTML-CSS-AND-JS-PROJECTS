@@ -1,0 +1,86 @@
+:root {
+  --primary: #47185c;
+  --primary-dark: #14001d;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+}
+
+main {
+  height: 100vh;
+  width: 100%;
+  background-color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  background-color: white;
+  width: min(400px, 90%);
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+}
+
+.container h1 {
+  font-size: clamp(1.5rem, 6vw, 2.25rem);
+
+  font-weight: bolder;
+  margin-bottom: .5rem;
+}
+.container p {
+  font-size: clamp(1rem, 5vw, 1.5rem);
+  margin-bottom: 1rem;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+form input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+}
+form input:focus-visible {
+  border: 1px solid var(--primary-dark);
+  outline: 1px solid var(--primary-dark);
+}
+form .btn {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--primary);
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+}
+form .btn:active {
+background-color: var(--primary-dark);
+}
+.image {
+  width: 100%;
+  border: 2px solid var(--primary-dark);
+  padding: .75rem;
+  border-top: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+}
+.image img {
+  width: min(175px, 80%);
+
+}
+
+.hide
+{
+  display: none;
+}

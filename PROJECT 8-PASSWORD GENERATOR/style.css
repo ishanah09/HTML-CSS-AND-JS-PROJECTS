@@ -1,0 +1,148 @@
+:root {
+  --primary: #ffba0a;
+  --primary-light: #ffde89;
+  --primary-x-light: #fae6b3;
+  --primary-dark: #e6a500;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+}
+body {
+  height: 100vh;
+  width: 100%;
+}
+main {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  width: min(425px, 100%);
+
+  box-shadow: 0 4px 20px rgba(255, 111, 97, 0.6);
+
+}
+.container .password-generator {
+  width: 100%;
+  height: 350px;
+
+ 
+  background: linear-gradient(to left bottom, #ff7e5f, #fff1e6);  
+
+ 
+
+  padding: 2rem;
+}
+.container .password-generator .title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.container .password-generator .title i {
+  font-size: 1.5rem;
+  color: red;
+}
+.container .password-generator .title h2 {
+  font-size: clamp(1rem, 6vw, 2rem);
+  font-weight: bolder;
+}
+
+.container .password-generator .input {
+  width: 100%;
+  height: 2.5rem;
+
+  background-color: #e6e6fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: red;
+  color: black;
+  font-size: 1.2rem;
+
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.container .password-generator .range {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.container .password-generator .includes {
+}
+
+.container .password-generator .includes .check {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 18px;
+  margin-bottom: 0.25rem;
+}
+
+.container .btn {
+  width: 100%;
+  background-color: #ffde89;
+  background-color: #ff6f61;
+  border: none;
+  font-size: 1.25rem;
+
+  padding: 0.75rem;
+
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.container .btn:hover {
+  background-color: #e25d52;
+}
+.container .btn:active {
+  color: white;
+  background-color: #d14c45;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  height: 0.5rem;
+  padding: 0;
+  outline: none;
+  cursor: pointer;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  height: 1.5rem;
+  width: 0.75rem;
+  background-color: red;
+  border: 1px solid black;
+}
+
+input[type="checkbox"] {
+  accent-color: red;
+}
+
+@media (max-width: 425px) {
+  .container {
+    height: 100vh;
+  }
+  .container .password-generator {
+    height: 100%;
+  }
+}
