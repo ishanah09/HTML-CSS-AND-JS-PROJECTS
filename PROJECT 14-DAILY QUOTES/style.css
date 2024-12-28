@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Playfair Display", serif;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+}
+
+main {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #bbc6fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  width: min(700px, 90%);
+  min-height: 500px;
+  background-color: white;
+  border-radius: 1rem;
+  padding: 2rem clamp(1rem, 5vw, 2rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 2rem;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.container .title {
+  position: relative;
+  font-size: clamp(1rem, 8vw, 2rem);
+}
+.container .title::before {
+  content: " ";
+  width: 80px;
+  height: 3px;
+  background-color: rgb(23, 124, 229);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -15px;
+  border-radius: 3px;
+}
+
+.container .quote-container {
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+.container .quote-container .quote {
+  position: relative;
+  font-size: clamp(0.5rem, 6vw, 1.75rem);
+  text-align: justify;
+  width: 100%;
+  min-height: 120px;
+}
+.container .quote-container .author {
+  display: none;
+  font-size: clamp(12px, 4vw, 1.35rem);
+  
+  position: relative;
+  align-self: flex-end;
+}
+.container .quote-container .author:before {
+  content: " ";
+  width: 35px;
+  height: 1.5px;
+  background-color: rgb(23, 124, 229);
+  position: absolute;
+
+  top: 50%;
+  left: -50px;
+  border-radius: 3px;
+}
+.container .button-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.container .button-container .new-quote-button {
+  background-color: rgb(23, 124, 229);
+  border-radius: 3rem;
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  cursor: pointer;
+}
+.container .button-container .tweet-button {
+  background-color: white;
+  border: 1px solid rgb(23, 124, 229);
+  border-radius: 3rem;
+  color: black;
+
+  padding: 1rem 2.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.container .button-container .tweet-button img {
+  height: 20px;
+  width: 20px;
+}
+
+@media (max-width: 425px) {
+}
