@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  
+  <body>
+    <div class="container ">
+      <h1 class="heading">Expense Tracker</h1>
+
+     
+        
+        <form id="edit-form"  class="edit-form hide">
+          <h2>Edit Transaction</h2>
+
+
+          <input
+          type="text"
+          name="description"
+          id="edit-description"
+          placeholder="Description"
+        />
+        <input
+          type="number"
+          name="amount"
+          id="edit-amount"
+          placeholder="Amount"
+        />
+        <select id="edit-options" name="option">
+          <option value="income">Income</option>
+          <option value="expense">Expense</option>
+        </select>
+         
+          <button type="submit">Update</button>
+          <button id="cancel-button">Cancel</button>
+        </form>
+      
+  
+
+
+      <div class="inputs " id="input-container">
+        <form id="form">
+          <input
+          type="text"
+          name="description"
+          placeholder="Description"
+          required
+        />
+        <input type="number" name="amount"  placeholder="Amount" required min="1" />
+        <select id="options" name="option">
+          <option value="income">Income</option>
+          <option value="expense">Expense</option>
+        </select>
+          <button type="submit">Add Transaction</button>
+        </form>
+
+        <h3 class="income">Income <span id="income">00</span></h3>
+        <h3 class="expense">Expense <span id="expense">00</span></h3>
+        <h3 class="balance">Total Balance <span id="balance">00</span></h3>
+      </div>
+
+      <div class="transactions">
+        <ul id="list-container">
+          <li>
+            <div class="list">
+              <span id="description"
+                >Lorem sit ametLorem sit Lorem ipsum dolor, sit amet rem!</span
+              >
+              <span id="amount"> ₹ 1000</span>
+              <div class="drop-down">
+                <i class="fa-solid fa-circle-chevron-down"></i>
+              </div>
+            </div>
+
+            <div class="buttons hide" id="buttons-container">
+              <div class="edit"><i class="fa-solid fa-pen"></i></div>
+              <div class="delete"><i class="fa-solid fa-trash"></i></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    
+
+    <script src="./script.js"></script>
+  </body>
+</html>
