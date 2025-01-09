@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+body {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.container {
+  min-height: 100vh;
+  width: 100%;
+  background: #14bdac;
+  padding: 2rem 1rem;
+}
+.container .heading {
+  text-align: center;
+  color: white;
+  font-weight: bold;
+
+  font-size: clamp(1rem, 12vw, 2.75rem);
+  text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5);
+  letter-spacing: 1px;
+}
+.container .game-box {
+  margin: 3rem auto;
+  width: min(360px, 100%);
+  height: min(360px, 100vw);
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1rem;
+}
+.container .game-box div {
+  background-color: white;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(1rem, 12vw, 3rem);
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s linear;
+  border: 2px solid black;
+}
+.container .game-box div:hover {
+  background-color: #f0e68c;
+  transform: scale(1.1);
+}
+
+.container .result {
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  font-size: clamp(0.75rem, 8vw, 1.5rem);
+  text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.3);
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+
+.container .button {
+  width: fit-content;
+  margin: auto;
+}
+.container .button button {
+  color: white;
+  background-color: #e74c3c;
+  border: none;
+  outline: none;
+  font-size: clamp(.5rem, 25vw, 1rem);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.container .button button:hover {
+  background-color: rgba(231, 77, 60, 0.9);
+}
+.container .button button:active {
+  transform: scale(0.9);
+}
+
+.disabled {
+  pointer-events: none; /* Prevent interaction */
+  background-color: gray !important;
+  transform: scale(0.95);
+}
+.winner {
+  background-color: lightgreen !important;
+  transform: scale(1.1);
+  opacity: 1;
+}
