@@ -1,0 +1,439 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+  padding: 1.5rem 0.5rem;
+}
+
+header {
+  width: 100%;
+  margin-bottom: 2.5rem;
+  padding: 0 clamp(0.5rem, 5vw, 2rem);
+}
+header .container {
+  margin: 0 auto;
+  width: min(600px, 100%);
+  border: 2px solid hsl(217, 16%, 45%);
+  border-radius: 0.5rem;
+  padding: clamp(0.25rem, 3vw, .75rem);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .container .logo {
+  width: clamp(25px, 25vw, 140px);
+}
+header .container .logo img {
+  width: 100%;
+}
+header .container .score-card {
+  text-align: center;
+  padding: clamp(0.25rem, 2.5vw, 0.5rem) clamp(0.25rem, 5vw, 1.5rem);
+  border-radius: 0.5rem;
+  background-color: white;
+}
+header .container .score-card p {
+  color: hsl(229, 25%, 31%);
+  font-size: clamp(0.25rem, 4vw, 1.5rem);
+  font-weight: 600;
+}
+header .container .score-card span {
+  color: hsl(229, 64%, 46%);
+  font-weight: bold;
+  font-size: clamp(1rem, 10vw, 2.5rem);
+}
+
+/* main container */
+main {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 1rem;
+}
+main .container {
+  margin: 0 auto;
+  padding: 1rem 0;
+  width: min(600px, 100%);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+main .container .box1 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.25rem, 6vw, 3rem);
+  margin-bottom: clamp(0.25rem, 6vw, 2rem);
+}
+main .container .box1 .paper {
+  background-color: white;
+  border-radius: 50%;
+  border: clamp(0.25rem, 6vw, 1.5rem) solid hsl(230, 89%, 62%);
+  padding: clamp(0.25rem, 6vw, 2.5rem);
+  box-shadow: inset 0px 7px 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+main .container .box1 .paper img {
+  width: clamp(10px, 10vw, 60px);
+  height: clamp(10px, 10vw, 60px);
+}
+main .container .box1 .scissor {
+  background-color: white;
+  border-radius: 50%;
+  border: 1rem solid;
+  border: clamp(0.25rem, 6vw, 1.5rem) solid hsl(39, 89%, 49%);
+  padding: clamp(0.25rem, 6vw, 2.5rem);
+  box-shadow: inset 0px 7px 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+main .container .box1 .scissor img {
+  width: clamp(10px, 10vw, 60px);
+  height: clamp(10px, 10vw, 60px);
+}
+main .container .box2 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main .container .box2 .rock {
+  background-color: white;
+  border-radius: 50%;
+  border: clamp(0.25rem, 6vw, 1.5rem) solid hsl(349, 71%, 52%);
+  padding: clamp(0.25rem, 6vw, 2.5rem);
+  box-shadow: inset 0px 7px 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+main .container .box2 .rock img {
+  width: clamp(10px, 10vw, 60px);
+  height: clamp(10px, 10vw, 60px);
+}
+
+main .container .box1 .paper:hover,
+main .container .box1 .scissor:hover,
+main .container .box2 .rock:hover {
+  opacity: 0.85;
+}
+main .container .box1 .paper:active,
+main .container .box1 .scissor:active,
+main .container .box2 .rock:active {
+  transform: scale(0.9);
+}
+
+/* game container */
+
+main .game-container {
+  margin: 0 auto;
+  width: min(900px, 100%);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 2rem;
+  align-items: center;
+}
+
+main .game-container .user {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  grid-column: 1/2;
+}
+main .game-container .house {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  grid-column: 3/4;
+}
+
+main .game-container .user h1,
+main .game-container .house h1 {
+  font-size: clamp(1rem, 4.2vw, 2rem);
+  color: white;
+  text-wrap: nowrap;
+}
+main .game-container .user h2,
+main .game-container .house h2 {
+  font-size: clamp(0.5rem, 4.2vw, 2rem);
+  color: white;
+  visibility: hidden;
+  text-wrap: nowrap;
+}
+
+main .game-container .user .paper,
+main .game-container .house .paper,
+main .game-container .user .rock,
+main .game-container .house .rock,
+main .game-container .user .scissor,
+main .game-container .house .scissor {
+  background-color: white;
+  border-radius: 50%;
+  border: clamp(0.75rem, 3.2vw, 1.5rem) solid hsl(230, 89%, 62%);
+  padding: clamp(1.25rem, 5.3vw, 2.5rem);
+  box-shadow: inset 0px 7px 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main .game-container .user .rock,
+main .game-container .house .rock {
+  border: clamp(0.75rem, 3.2vw, 1.5rem) solid hsl(349, 71%, 52%);
+}
+
+main .game-container .user .scissor,
+main .game-container .house .scissor {
+  border: clamp(0.75rem, 3.2vw, 1.5rem) solid hsl(39, 89%, 49%);
+}
+
+main .game-container .user .paper img,
+main .game-container .house .paper img,
+main .game-container .user .rock img,
+main .game-container .house .rock img,
+main .game-container .user .scissor img,
+main .game-container .house .scissor img {
+  width: clamp(20px, 6.6vw, 60px);
+  height: clamp(20px, 6.6vw, 60px);
+}
+
+main .game-container .house-circle {
+  width: clamp(80px, 21vw, 175px);
+  height: clamp(80px, 21vw, 175px);
+  background-color: hsl(229, 25%, 31%);
+  border-radius: 50%;
+}
+
+main .game-container .result {
+  grid-column: 2/3;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+main .game-container .result h1 {
+  font-size: clamp(1.5rem, 4.2vw, 2.5rem);
+
+  color: white;
+}
+
+main .game-container .result .playBtn {
+  color: blue;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.75rem clamp(0.5rem, 2.1vw, 3rem);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* footer  */
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+footer .rules-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: clamp(0.25rem, 10vw, 2rem);
+  background-color: white;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+footer .rules-container .text {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+footer .rules-container .text h2 {
+  font-size: clamp(0.25rem, 10vw, 2rem);
+}
+.cross-btn {
+  font-size: 1.75rem;
+  color: gray;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+#cross-btn2 {
+  display: none;
+}
+
+footer .rules-container .image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(50px, 100vw, 275px);
+  padding: 1rem;
+}
+footer .rules-container .image img {
+  width: 100%;
+}
+
+footer .btn {
+  font-size: clamp(0.5rem, 6.25vw, 1.25rem);
+  border: 2px solid hsl(217, 16%, 45%);
+  color: white;
+  background-color: transparent;
+  padding: 0.35rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+footer .btn:active {
+  transform: scale(1.1);
+}
+
+.hide {
+  display: none !important;
+}
+
+.circle {
+  box-shadow: inset 0px 7px 5px rgba(0, 0, 0, 0.3),
+    0px 0px 0px 35px rgba(255, 255, 255, 0.05),
+    0px 0px 0px 70px rgba(255, 255, 255, 0.05),
+    0px 0px 0px 105px rgba(255, 255, 255, 0.05) !important;
+}
+
+@media (max-width: 500px) {
+  .circle {
+    box-shadow: inset 0px 7px 5px rgba(0, 0, 0, 0.3),
+      0px 0px 0px 25px rgba(255, 255, 255, 0.05),
+      0px 0px 0px 50px rgba(255, 255, 255, 0.05),
+      0px 0px 0px 75px rgba(255, 255, 255, 0.05) !important;
+  }
+}
+
+@media (max-width: 375px) {
+  main .game-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  main .game-container .user {
+    gap: 1.5rem;
+    grid-column: 1/2;
+  }
+  main .game-container .house {
+    gap: 1.5rem;
+    grid-column: 2/3;
+    justify-content: space-between;
+  }
+
+  main .game-container .user h1,
+  main .game-container .house h1 {
+    visibility: hidden;
+  }
+  main .game-container .user h2,
+  main .game-container .house h2 {
+    visibility: visible;
+    margin: 0;
+  }
+
+  main .game-container .user .paper,
+  main .game-container .house .paper,
+  main .game-container .user .rock,
+  main .game-container .house .rock,
+  main .game-container .user .scissor,
+  main .game-container .house .scissor {
+    border: clamp(0.5rem, 4vw, 1.5rem) solid hsl(230, 89%, 62%);
+    padding: clamp(0.5rem, 5vw, 2.5rem);
+    box-shadow: inset 0px 7px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  main .game-container .user .rock,
+  main .game-container .house .rock {
+    border: clamp(0.5rem, 4vw, 1.5rem) solid hsl(349, 71%, 52%);
+  }
+
+  main .game-container .user .scissor,
+  main .game-container .house .scissor {
+    border: clamp(0.5rem, 4vw, 1.5rem) solid hsl(39, 89%, 49%);
+  }
+  main .game-container .user .paper img,
+  main .game-container .house .paper img,
+  main .game-container .user .rock img,
+  main .game-container .house .rock img,
+  main .game-container .user .scissor img,
+  main .game-container .house .scissor img {
+    width: clamp(15px, 8vw, 60px);
+    height: clamp(15px, 8vw, 60px);
+  }
+
+  main .game-container .house-circle {
+    width: clamp(30px, 24vw, 90px);
+    height: clamp(30px, 24vw, 90px);
+    background-color: hsl(229, 25%, 31%);
+    border-radius: 50%;
+  }
+  main .game-container .result {
+    grid-column: 1/3;
+    grid-row: 2/3;
+  }
+  main .game-container .result h1 {
+    font-size: clamp(1.5rem, 10.5vw, 2.5rem);
+  }
+
+  main .game-container .result .playBtn {
+    padding: 0.75rem clamp(0.75rem, 12vw, 4rem);
+  }
+
+  footer {
+    justify-content: center;
+  }
+
+  footer .rules-container {
+    height: 100vh;
+    width: 100%;
+  }
+  footer .rules-container .text {
+    justify-content: center;
+  }
+  #cross-btn1 {
+    display: none;
+  }
+
+  #cross-btn2 {
+    display: block;
+  }
+
+  .circle {
+    box-shadow: inset 0px 7px 5px rgba(0, 0, 0, 0.3),
+      0px 0px 0px 20px rgba(255, 255, 255, 0.05),
+      0px 0px 0px 40px rgba(255, 255, 255, 0.05),
+      0px 0px 0px 60px rgba(255, 255, 255, 0.05) !important;
+  }
+}
