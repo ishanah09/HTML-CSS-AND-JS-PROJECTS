@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  width: 500px;
+  min-height: 500px;
+  background-color: #e5edff;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.container .top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 1rem 0 0;
+}
+.container .top .stopwatch {
+  padding: 0.75rem 1.5rem;
+  border-radius: 3rem;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  font-size: 1rem;
+}
+
+.container .top i {
+  color: rgb(103, 151, 228);
+  font-size: 1rem;
+}
+
+.container .middle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .middle .timer {
+  position: relative;
+  font-size: clamp(1rem, 8vw, 3rem);
+  letter-spacing: 1px;
+  border-radius: 50%;
+  width: min(300px, 80vw);
+  height: min(300px, 80vw);
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid lightslategray;
+}
+.container .middle .timer:after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: #271900;
+  border-radius: 50%;
+  transform: translatey(-150px);
+  animation: movingBall 2s linear infinite;
+}
+@keyframes movingBall {
+  0% {
+    transform: rotate(0deg) translatey(-150px);
+  }
+  100% {
+    transform: rotate(360deg) translatey(-150px);
+  }
+}
+.container .bottom {
+  padding: 0 1rem;
+  width: 100%;
+  display: flex;
+  gap: 0.5rem;
+}
+.container .bottom .play {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 3rem;
+  border: none;
+  background-color: #0b57d0;
+  color: white;
+  cursor: pointer;
+}
+.container .bottom .stop,
+.bottom .reset {
+  width: 50%;
+  padding: 1rem;
+  border-radius: 3rem;
+  border: none;
+  background-color: #0b57d0;
+  color: white;
+  cursor: pointer;
+}
+.hide {
+  display: none;
+}
+
+@media (max-width: 500px) {
+  .container {
+    width: 100vw;
+    min-height: 100vh;
+    border-radius: 0;
+  }
+}
+@media (max-width: 350px) {
+  .container .middle .timer:after {
+    transform: translatey(-40vw);
+    animation: movingBall 2s linear infinite;
+  }
+  @keyframes movingBall {
+    0% {
+      transform: rotate(0deg) translatey(-40vw);
+    }
+    100% {
+      transform: rotate(360deg) translatey(-40vw);
+    }
+  }
+}
+
+.border-none {
+  border: none !important;
+}
+.border-none::after {
+  display: none;
+}
