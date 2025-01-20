@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Strength Indicator - Easy Tutorials</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form id="form">
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          id="input"
+          required
+        />
+        <button type="submit"><img src="./arrow.png" alt="" /></button>
+      </form>
+
+      <span id="message">Password is <span id="strength"></span></span>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
