@@ -78,6 +78,7 @@ messageEl.addEventListener("input", messageValidate);
 emailEl.addEventListener("input", emailValidate);
 
 submitEl.addEventListener("click", (event) => {
+  event.preventDefault();
   if (
     !nameValidate() ||
     !emailValidate() ||
