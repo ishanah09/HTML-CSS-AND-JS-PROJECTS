@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+  overflow: hidden;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+}
+.container {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  background-image: url(./images/background.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding: 1rem;
+  padding-left: 8%;
+
+  display: flex;
+  align-items: center;
+}
+.container nav {
+  position: absolute;
+  top: 1rem;
+  left: 8%;
+  z-index: 100;
+}
+.container nav img {
+  width: 125px;
+  height: 40px;
+}
+.container main {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.container main p {
+  color: white;
+  margin-bottom: 0.5rem;
+}
+.container main h1 {
+  color: white;
+  margin-bottom: 1rem;
+  font-size: 4rem;
+}
+.container main .launching {
+  color: #ff3753;
+}
+.container main .launch-time {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+.container main .launch-time span {
+  color: white;
+  font-size: 3rem;
+}
+.container main .launch-time p {
+  font-size: 1.75rem;
+}
+.container main button {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+}
+.container main button img {
+  width: 17.5px;
+  height: 17.5px;
+}
+.container .rocket {
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  bottom: 0%;
+  right: 5%;
+  animation: movingRocket 3s linear infinite;
+}
+@keyframes movingRocket {
+    0%
+    {
+        bottom: -10%;
+        opacity: 0.5;
+        transform: scale(.4);
+    }
+    100%
+    {
+        bottom: 100%;
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+.container .rocket img {
+  width: 100%;
+  height: 100%;
+}
