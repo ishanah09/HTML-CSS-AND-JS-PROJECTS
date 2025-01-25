@@ -2,10 +2,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
   font-family: "Roboto", serif;
   line-height: 1.4;
-  letter-spacing: 0.75px;
+  list-style: none;
 }
 html,
 body {
@@ -16,9 +15,7 @@ section {
   scroll-margin: 50px;
 }
 
-ul {
-  list-style: none;
-}
+
 a {
   text-decoration: none;
   color: white;
@@ -36,7 +33,7 @@ button:hover {
 }
 
 .container {
-  max-width: 90%;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -48,19 +45,33 @@ header {
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
 }
 
-header nav {
-  padding: 1.25rem;
+nav {
+  padding: 1.25rem 2rem;
   max-width: 1200px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-header nav .logo {
+nav .logo {
   font-size: 2rem;
   color: white;
   font-weight: 600;
 }
 
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  font-weight: 300;
+}
+
+nav ul li {
+  border-bottom: 1px solid transparent;
+}
+
+nav ul li:hover {
+  border-bottom: 1px solid white;
+  transition: 0.3 ease-in;
+}
 header .hamburger {
   width: 1.75rem;
   display: none;
@@ -70,39 +81,16 @@ header .hamburger .line {
   margin-bottom: 0.5rem;
 }
 
-header nav .link ul {
-  display: flex;
-  gap: 1rem;
-  font-size: 18px;
-  text-align: center;
-}
-
-header .link ul li {
-  padding: .25rem;
-}
-
-header .link ul li:hover {
-  border-radius: 1rem;
-background-color: white;
-color: black;
-  transition: 0.3 ease-in;
-}
-
-
-/* main section started */
-
-main .hero-section {
+.hero-section {
   min-height: 100vh;
-
   background-image: url(./images/hero_image.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
-  padding: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1.5rem;
 }
 .hero-section .container {
   display: flex;
@@ -110,14 +98,14 @@ main .hero-section {
   align-items: center;
   justify-content: center;
   text-align: center;
-  gap: 1.5rem;
+  gap: 2rem;
   color: white;
 }
 .hero-section h1 {
-  font-size: clamp(2.5rem, 12vw, 6rem);
+  font-size: clamp(2.25rem, 10vw, 5rem);
 }
-.hero-section h3 {
-  font-size: clamp(1rem, 14w, 2rem);
+.hero-section h2 {
+  font-size: clamp(1rem, 5vw, 2.5rem);
 }
 .hero-section p {
   font-weight: 300;
@@ -125,10 +113,6 @@ main .hero-section {
 
 .music-section {
   background-color: #281154;
-
-  display: flex;
-  align-items: center;
-  text-align: center;
   color: white;
   padding: 1.5rem;
 }
@@ -142,7 +126,7 @@ main .hero-section {
 }
 
 .music-section h3 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 600;
 }
 
@@ -156,18 +140,14 @@ main .hero-section {
 }
 .music-section .phone-image {
   width: 85%;
-
   padding: 1rem;
-
-  margin-top: -33vw;
+  margin-top: -30vw;
   position: relative;
-  top: 33vw;
+  top: 30vw;
 }
 .music-section .phone-image img {
   width: 100%;
 }
-
-/* about-music section-3 */
 
 .about-music {
   display: flex;
@@ -179,10 +159,9 @@ main .hero-section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  margin-top: 35vw;
-  gap: 3rem;
-  margin-bottom: 4rem;
+  margin-top: 33vw;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
 }
 .about-music .mac-img {
   width: 85%;
@@ -198,8 +177,6 @@ main .hero-section {
   background-color: #270084;
   color: white;
 }
-
-/* section-4 video section */
 
 .video-section {
   min-height: 100vh;
@@ -223,13 +200,12 @@ main .hero-section {
 }
 .video-section .container h4 {
   font-size: 1.5rem;
+
   font-weight: 600;
 }
 .video-section .container p {
   font-weight: 300;
 }
-
-/* section-5 gift section */
 
 .gift-section {
   display: flex;
@@ -237,23 +213,27 @@ main .hero-section {
 .gift-section .container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 2rem;
-  padding: 1rem;
+  padding: 1.5rem;
 }
 .gift-section .container .image {
-  width: 40%;
+  padding: 1rem;
+  width: max(60%, 150px);
 }
 .gift-section .container .image img {
   width: 100%;
 }
 .gift-section .container .text-content {
-  width: 60%;
+  width: 100%;
+
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: flex-start;
+  text-align: justify;
   gap: 1.5rem;
+  padding: 1.5rem;
 }
 .gift-section h4 {
   font-weight: bolder;
@@ -263,6 +243,7 @@ main .hero-section {
   font-weight: 300;
 }
 
+
 .divider {
   border: 1px solid gray;
   align-self: stretch;
@@ -271,7 +252,6 @@ main .hero-section {
   background-color: #270082;
   color: white;
 }
-/* gift-section complete */
 
 footer {
   background-color: #1b0058;
@@ -281,26 +261,26 @@ footer .footer-upper {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 2.5rem 1.5rem;
+  gap: 2rem;
 }
 footer .footer-links {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  gap: 0.75rem;
 }
 footer .footer-links h4 {
-  font-size: 1.25rem;
-  font-weight: 500;
   border-bottom: 1px solid white;
-  padding: 0.35rem 0;
+  padding: 0.5rem 0;
   margin-bottom: 0.75rem;
+  font-size: 1.25rem;
 }
 
 footer .footer-links li {
   font-weight: 300;
   text-align: start;
-  margin-bottom: 0.5rem;
 }
 
 footer .footer-lower {
@@ -310,24 +290,18 @@ footer .footer-lower {
   justify-content: center;
   padding: 1.25rem;
   color: white;
-  font-weight: 300;
 }
 
-.show {
-  display: block!important;
+@media (max-width: 1024px) {
+  .gift-section .container {
+    flex-direction: column;
+  }
 
 }
+
 
 @media (max-width: 768px) {
-  footer .footer-upper {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 2rem;
-  }
-}
 
-@media (max-width: 600px) {
   header .hamburger {
     display: block;
   }
@@ -354,13 +328,15 @@ footer .footer-lower {
     margin-bottom: 1rem;
   }
 
-  .gift-section .container {
-    flex-direction: column;
-  }
 
-  .gift-section .container .text-content {
-    width: 100%;
-    align-items: center;
-    text-align: justify;
+
+  footer .footer-upper {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
   }
+}
+
+.show {
+  display: block!important;
 }
